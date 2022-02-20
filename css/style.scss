@@ -1,4 +1,5 @@
 /* Similar code start */
+$background-color: #2f9de6;
 * {
   margin: 0;
   padding: 0;
@@ -34,19 +35,19 @@
       text-decoration: none;
       color: #fff;
       text-transform: uppercase;
-    }
-    &::after {
-      content: "";
-      height: 5px;
-      width: 0;
-      background: #3b9ce0;
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      transition: 0.5s;
-    }
-    :hover::after {
-      width: 100%;
+      &::after {
+        content: "";
+        height: 5px;
+        width: 0;
+        background: $background-color;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+      }
+      &:hover::after {
+        width: 100%;
+      }
     }
   }
 }
@@ -79,14 +80,14 @@
     font-weight: bold;
     font-size: 18px;
     border-radius: 40px;
-    border: 2px solid #3b9ce0;
+    border: 2px solid $background-color;
     background: transparent;
     color: #fff;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     span {
-      background-color: #3b9ce0;
+      background-color: $background-color;
       height: 100%;
       width: 0;
       border-radius: 25px;
@@ -104,3 +105,80 @@
     }
   }
 }
+
+/*
+  Responsive Design Start
+*/
+
+/* Mobile devices Layout: 320px to 480px Start */
+@media (min-width: 320px) and (max-width: 480px) {
+  .nav__bar {
+    .logo {
+      width: 100px;
+      margin-left: -30px;
+    }
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    .menu {
+      width: 320px;
+      margin-top: -20px;
+      ul {
+        display: grid;
+        grid-template-columns: 4fr 4fr 4fr;
+        grid-gap: 2%;
+        li {
+          margin: 0;
+        }
+      }
+    }
+  }
+  .content {
+    margin-top: 20px;
+    h1 {
+      margin-top: 30px;
+      font-size: 28px;
+      word-spacing: 10px;
+      letter-spacing: 5px;
+    }
+    p {
+      margin: 10px;
+    }
+    button {
+      padding: 10px;
+      margin: 10px;
+    }
+  }
+}
+/* Mobile devices Layout: 320px to 480px End */
+
+//  Wide Mobile Layout: 481px to 768px start
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .nav__bar {
+    margin-left: 45px;
+
+    .img img {
+      width: 100px;
+      display: block;
+    }
+    .menu ul li {
+      margin: 6.6px;
+    }
+  }
+  .content {
+    h1 {
+      word-spacing: 15px;
+      letter-spacing: -5px;
+    }
+    &__p {
+      text-align: center;
+      margin-right: 80px;
+      margin-left: 80px;
+    }
+  }
+}
+//  Wide Mobile Layout: 480px to 767px end
+
+/*
+  Responsive Design End
+*/

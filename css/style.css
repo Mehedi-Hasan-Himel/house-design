@@ -49,11 +49,11 @@
   text-transform: uppercase;
 }
 
-.nav__bar ul li::after {
+.nav__bar ul li a::after {
   content: "";
   height: 5px;
   width: 0;
-  background: #3b9ce0;
+  background: #2f9de6;
   position: absolute;
   left: 0;
   bottom: -10px;
@@ -61,7 +61,7 @@
   transition: 0.5s;
 }
 
-.nav__bar ul li :hover::after {
+.nav__bar ul li a:hover::after {
   width: 100%;
 }
 
@@ -98,7 +98,7 @@
   font-weight: bold;
   font-size: 18px;
   border-radius: 40px;
-  border: 2px solid #3b9ce0;
+  border: 2px solid #2f9de6;
   background: transparent;
   color: #fff;
   cursor: pointer;
@@ -107,7 +107,7 @@
 }
 
 .content button span {
-  background-color: #3b9ce0;
+  background-color: #2f9de6;
   height: 100%;
   width: 0;
   border-radius: 25px;
@@ -126,4 +126,82 @@
 .content button:hover span {
   width: 100%;
 }
+
+/*
+  Responsive Design Start
+*/
+/* Mobile devices Layout: 320px to 480px Start */
+@media (min-width: 320px) and (max-width: 480px) {
+  .nav__bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+  }
+  .nav__bar .logo {
+    width: 100px;
+    margin-left: -30px;
+  }
+  .nav__bar .menu {
+    width: 320px;
+    margin-top: -20px;
+  }
+  .nav__bar .menu ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 4fr 4fr 4fr;
+        grid-template-columns: 4fr 4fr 4fr;
+    grid-gap: 2%;
+  }
+  .nav__bar .menu ul li {
+    margin: 0;
+  }
+  .content {
+    margin-top: 20px;
+  }
+  .content h1 {
+    margin-top: 30px;
+    font-size: 28px;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+  }
+  .content p {
+    margin: 10px;
+  }
+  .content button {
+    padding: 10px;
+    margin: 10px;
+  }
+}
+
+/* Mobile devices Layout: 320px to 480px End */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .nav__bar {
+    margin-left: 45px;
+  }
+  .nav__bar .img img {
+    width: 100px;
+    display: block;
+  }
+  .nav__bar .menu ul li {
+    margin: 6.6px;
+  }
+  .content h1 {
+    word-spacing: 15px;
+    letter-spacing: -5px;
+  }
+  .content__p {
+    text-align: center;
+    margin-right: 80px;
+    margin-left: 80px;
+  }
+}
+
+/*
+  Responsive Design End
+*/
 /*# sourceMappingURL=style.css.map */
